@@ -20,4 +20,6 @@ docker-compose up --build
 ```sh
 docker-compose up
 ```
- 
+
+## test
+http://localhost:1234/parent/index.php
