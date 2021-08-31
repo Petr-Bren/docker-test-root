@@ -15,6 +15,7 @@ mv docker-test-kata/ kata
 docker-compose up --build
 ```
 
+## run
 ```sh
 docker-compose up
 ```
