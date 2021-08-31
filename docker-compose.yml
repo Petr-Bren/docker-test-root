@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+
+  kata:
+    container_name: kata
+    build:
+      context: ./kata
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./parent:/var/www/html/parent
+    networks:
+      - kata-a-skubanek-network
+
+  skubanek:
+    container_name: skubanek
+    build:
+      context: ./skubanek
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./parent:/var/www/parent
+    networks:
+      - kata-a-skubanek-network
+    ports:
+      - 127.0.0.1:1234:80
+
+networks:
+  kata-a-skubanek-network:
+    driver: bridge
+
